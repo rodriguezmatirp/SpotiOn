@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    .center {
+    margin: auto;
+    padding: 16%;
+    }
+</style>
+{% endblock %}
+
+{% block content%}
+<div class="center">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">This is SpotiOn, a simple application which provides an Interface to access spotify songs. </p>
+        <hr class="my-4">
+        <p>Sign in through your Spotify account to explore the features of SpotiOn. Download your favorite songs and videos here.</p>
+        <p class="lead">
+            <a class="btn btn-outline-success" href="{{auth_url}}" role="button">Sign In</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

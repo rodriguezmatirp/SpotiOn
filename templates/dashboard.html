@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block navbar%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse_target">
+        <a class="navbar-brand" href="#">
+            <span style="font-size: 1.5em;">
+                <i class="fab fa-spotify"></i>
+            </span>
+        </a>
+        <span class="navbar-brand">SpotiOn</span>
+
+        <ul class="navbar-nav mr-auto text-center">
+            <li class="navbar-item {{'active' if active_page == 'dashboard' }}">
+                <a class="nav-link" href="/">Dashboard</a>
+            </li>
+            <li class="navbar-item {{'active' if active_page == 'saved_tracks' }}">
+                <a class="nav-link" href="/tracks/saved/">Saved Tracks</a>
+            </li>
+            <li class="navbar-item {{'active' if active_page =='playlists'}}">
+                <a class="nav-link" href="/playlists/current/">Playlists</a>
+            </li>
+            <li class="navbar-item {{'active' if active_page== 'profile'}}">
+                <a class="nav-link" href="/user/profile/">Profile</a>
+            </li>
+            <li class="navbar-item {{'active' if active_page== 'download'}}">
+                <a class="nav-link" href="/download/">Download</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="/sign_out/">Logout</a>
+            </li>
+        </ul>
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="jumbotron" style="margin-bottom: 0px;">
+    {% if username %}
+        <h1>SpotiOn - Welcome Back,<h2 style="color: rgb(240, 109, 109);">{{username}}</h2></h1>
+    {% else %}
+        <h1>SpotiOn - Welcome Back, <h2 style="color: rgb(243, 109, 109);"></h2>Guest</h1>
+    {% endif %}
+    <p>Explore the features of SpotiOn and Download your favorite Songs and Videos.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
